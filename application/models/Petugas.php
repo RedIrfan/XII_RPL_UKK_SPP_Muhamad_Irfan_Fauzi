@@ -14,7 +14,7 @@
 
         public function get_where_with_id($id)
         {
-            return $this->db->get_where('petugas', array('id_petugas' => $id))->result(p);
+            return $this->db->get_where('petugas', array('id_petugas' => $id))->result();
         }
 
         public function insert($username, $password, $nama_petugas, $level='petugas')

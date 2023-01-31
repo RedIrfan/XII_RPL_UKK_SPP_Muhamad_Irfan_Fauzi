@@ -30,9 +30,11 @@
                     <div>
                         <select name="level" id="level" class="form-control">
                             <?php if ($worker->level == "admin") : ?>
+                                <option value="petugas">Petugas</option>
                                 <option value="admin" selected>Administrator</option>
                             <?php elseif ($worker->level == "petugas") : ?>
                                 <option value="petugas" selected>Petugas</option>
+                                <option value="admin">Administrator</option>
                             <?php else : ?>
                                 <option value="admin">Administrator</option>
                                 <option value="petugas">Petugas</option>

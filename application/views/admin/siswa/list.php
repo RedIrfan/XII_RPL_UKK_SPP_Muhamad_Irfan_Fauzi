@@ -21,21 +21,25 @@
                     <th>Aksi</th>
                 </thead>
                 <tbody>
-                    <?php foreach($students as $student) : ?>
-                        <tr>
-                            <td><?= $student->nisn ?></td>
-                            <td><?= $student->nis ?></td>
-                            <td><?= $student->nama ?></td>
-                            <td><?= $student->nama_kelas ?></td>
-                            <td><?= $student->alamat ?></td>
-                            <td><?= $student->no_telp ?></td>
-                            <td><?= $student->id_spp ?></td>
-                            <td>
-                                <a href="<?= site_url('admin/siswa/edit/' . $student->nisn) ?>" class="btn btn-success" >Edit</a>
-                                <a href="<?= site_url('admin/siswa/delete/' . $student->nisn) ?>" class="btn btn-danger">Delete</a>
-                            </td>
-                        </tr>
-                    <?php endforeach ?>
+                    <?php if (count($students) > 0) : ?>
+                        <?php foreach($students as $student) : ?>
+                            <tr>
+                                <td><?= $student->nisn ?></td>
+                                <td><?= $student->nis ?></td>
+                                <td><?= $student->nama ?></td>
+                                <td><?= $student->nama_kelas ?></td>
+                                <td><?= $student->alamat ?></td>
+                                <td><?= $student->no_telp ?></td>
+                                <td><?= $student->id_spp ?></td>
+                                <td>
+                                    <a href="<?= site_url('admin/siswa/edit/' . $student->nisn) ?>" class="btn btn-success" >Edit</a>
+                                    <a href="<?= site_url('admin/siswa/delete/' . $student->nisn) ?>" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+                    <?php else : ?>
+                        <td colspan="8">Data tidak ditemukan.</td>
+                    <?php endif ?>
                 </tbody>
             </table>
         </div>

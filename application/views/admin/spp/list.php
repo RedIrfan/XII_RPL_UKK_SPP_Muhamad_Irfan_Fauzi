@@ -17,17 +17,21 @@
                     <th>Aksi</th>
                 </thead>
                 <tbody>
-                    <?php foreach($spps as $spp) : ?>
-                        <tr>
-                            <td><?= $spp->id_spp ?></td>
-                            <td><?= $spp->tahun ?></td>
-                            <td><?= $spp->nominal ?></td>
-                            <td>
-                                <a href="<?= site_url('admin/spp/edit/' . $spp->id_spp) ?>" class="btn btn-success" >Edit</a>
-                                <a href="<?= site_url('admin/spp/delete/' . $spp->id_spp) ?>" class="btn btn-danger">Delete</a>
-                            </td>
-                        </tr>
-                    <?php endforeach ?>
+                    <?php if(count($spps) > 0) : ?>
+                        <?php foreach($spps as $spp) : ?>
+                            <tr>
+                                <td><?= $spp->id_spp ?></td>
+                                <td><?= $spp->tahun ?></td>
+                                <td><?= $spp->nominal ?></td>
+                                <td>
+                                    <a href="<?= site_url('admin/spp/edit/' . $spp->id_spp) ?>" class="btn btn-success" >Edit</a>
+                                    <a href="<?= site_url('admin/spp/delete/' . $spp->id_spp) ?>" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+                    <?php else : ?>
+                        <td colspan="4">Data tidak ditemukan.</td>
+                    <?php endif ?>
                 </tbody>
             </table>
         </div>

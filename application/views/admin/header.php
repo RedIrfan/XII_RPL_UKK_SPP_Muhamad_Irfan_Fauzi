@@ -56,11 +56,11 @@
                             </a>
 
                             <div class="sb-sidenav-menu-heading">Laporan</div>
-                            <a class="nav-link" href="<?= site_url('admin/spp') ?>">
+                            <a class="nav-link" href="<?= site_url('admin/transaksi') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Transaksi Pembayaran
                             </a>
-                            <a class="nav-link" href="<?= site_url('admin/spp') ?>">
+                            <a class="nav-link" href="<?= site_url('admin/history') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 History
                             </a>

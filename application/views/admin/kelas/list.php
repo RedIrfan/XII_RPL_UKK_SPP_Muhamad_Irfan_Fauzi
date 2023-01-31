@@ -17,17 +17,21 @@
                     <th>Aksi</th>
                 </thead>
                 <tbody>
-                    <?php foreach($classes as $class) : ?>
-                        <tr>
-                            <td><?= $class->id_kelas ?></td>
-                            <td><?= $class->nama_kelas ?></td>
-                            <td><?= $class->kompetensi_keahlian ?></td>
-                            <td>
-                                <a href="<?= site_url('admin/kelas/edit/' . $class->id_kelas) ?>" class="btn btn-success" >Edit</a>
-                                <a href="<?= site_url('admin/kelas/delete/' . $class->id_kelas) ?>" class="btn btn-danger">Delete</a>
-                            </td>
-                        </tr>
-                    <?php endforeach ?>
+                    <?php if (count($classes) > 0) : ?>
+                        <?php foreach($classes as $class) : ?>
+                            <tr>
+                                <td><?= $class->id_kelas ?></td>
+                                <td><?= $class->nama_kelas ?></td>
+                                <td><?= $class->kompetensi_keahlian ?></td>
+                                <td>
+                                    <a href="<?= site_url('admin/kelas/edit/' . $class->id_kelas) ?>" class="btn btn-success" >Edit</a>
+                                    <a href="<?= site_url('admin/kelas/delete/' . $class->id_kelas) ?>" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+                    <?php else : ?>
+                        <td colspan="4">Data tidak ditemukan.</td>
+                    <?php endif ?>
                 </tbody>
             </table>
         </div>

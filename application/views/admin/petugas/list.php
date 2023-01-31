@@ -19,19 +19,23 @@
                     <th>Aksi</th>
                 </thead>
                 <tbody>
-                    <?php foreach($workers as $worker) : ?>
-                        <tr>
-                            <td><?= $worker->id_petugas ?></td>
-                            <td><?= $worker->username ?></td>
-                            <td><?= $worker->password ?></td>
-                            <td><?= $worker->nama_petugas ?></td>
-                            <td><?= $worker->level ?></td>
-                            <td>
-                                <a href="<?= site_url('admin/petugas/edit/' . $worker->id_petugas) ?>" class="btn btn-success" >Edit</a>
-                                <a href="<?= site_url('admin/petugas/delete/' . $worker->id_petugas) ?>" class="btn btn-danger">Delete</a>
-                            </td>
-                        </tr>
-                    <?php endforeach ?>
+                    <?php if (count($workers) > 0) : ?>
+                        <?php foreach($workers as $worker) : ?>
+                            <tr>
+                                <td><?= $worker->id_petugas ?></td>
+                                <td><?= $worker->username ?></td>
+                                <td><?= $worker->password ?></td>
+                                <td><?= $worker->nama_petugas ?></td>
+                                <td><?= $worker->level ?></td>
+                                <td>
+                                    <a href="<?= site_url('admin/petugas/edit/' . $worker->id_petugas) ?>" class="btn btn-success" >Edit</a>
+                                    <a href="<?= site_url('admin/petugas/delete/' . $worker->id_petugas) ?>" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+                    <?php else : ?>
+                        <td colspan="6">Data tidak ditemukan.</td>
+                    <?php endif ?>
                 </tbody>
             </table>
         </div>
