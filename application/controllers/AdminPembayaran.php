@@ -24,8 +24,28 @@ class AdminPembayaran extends Admin {
     {
         $data["workers"] = $this->petugas->get();
         $data["students"] = $this->siswa->get();
+        $data["spps"] = $this->spp->get();
 
         $this->view('admin/pembayaran/transaksi', "Transaksi", $data);
+    }
+
+    public function transaksi_insert()
+    {
+        $petugas = $this->input->post('petugas');
+        $siswa = $this->input->post('siswa');
+        $tanggal = $this->input->post('tanggal');
+        $bulan = $this->input->post('bulan');
+        $tahun = $this->input->post('tahun');
+        $spp = $this->input->post('spp');
+        $jumlah = $this->input->post('jumlah');
+
+        $query = $this->pembayaran->insert($petugas, $siswa, $tanggal, $bulan, $tahun, $spp, $jumlah);
+
+        if ($query){
+            redirect(site_url('admin/history'));
+        } else{
+            redirect(site_url('admin/transaksi'));
+        }
     }
 
     public function insert()

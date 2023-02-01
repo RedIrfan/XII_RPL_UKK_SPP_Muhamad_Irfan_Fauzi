@@ -8,8 +8,8 @@
             <h6>List Siswa</h6>
         </div>
         <div class="card-body">
-            <a href="<?= site_url('admin/siswa/add') ?>" class="btn btn-primary d-block w-100">Tambah Siswa Baru</a>
-            <table id="datatable" class="table"|>
+            <a href="<?= site_url('admin/siswa/add') ?>" class="btn btn-primary d-block w-100 mb-2">Tambah Siswa Baru</a>
+            <table id="datatable" class="table table-striped">
                 <thead>
                     <th>Nisn</th>
                     <th>Nis</th>
@@ -44,12 +44,4 @@
             </table>
         </div>
     </div>
-    <script>
-        window.addEventListener('DOMContentLoaded', event => {
-            const datatable = document.getElementById('datatable');
-            if (datatable) {
-                new simpleDatatables.DataTable(datatable);
-            }
-        });
-    </script>
 </div>

@@ -8,7 +8,7 @@
             <h6>Form Transaksi</h6>
         </div>
         <div class="card-body">
-            <form action="<?= site_url('admin/kelas/insert') ?>" method="post">
+            <form action="<?= site_url('admin/transaksi/insert') ?>" method="post">
                 <div class="row row-cols-2">
                     <label for="petugas">Petugas</label>
                     <div>
@@ -41,6 +41,15 @@
                     <label for="tahun">Tahun Dibayar</label>
                     <div>
                         <input type="text" name="tahun" id="tahun" class="form-control">
+                    </div>
+
+                    <label for="spp">Spp</label>
+                    <div>
+                        <select name="spp" id="spp" class="form-select">
+                            <?php foreach($spps as $spp) : ?>
+                                <option value="<?= $spp->id_spp ?>"><?= $spp->id_spp ?></option>
+                            <?php endforeach ?>
+                        </select>
                     </div>
 
                     <label for="jumlah">Jumlah Bayar</label>

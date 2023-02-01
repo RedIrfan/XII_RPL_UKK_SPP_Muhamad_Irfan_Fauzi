@@ -8,8 +8,8 @@
             <h6>List Spp</h6>
         </div>
         <div class="card-body">
-            <a href="<?= site_url('admin/spp/add') ?>" class="btn btn-primary d-block w-100">Tambah Spp Baru</a>
-            <table id="datatable" class="table"|>
+            <a href="<?= site_url('admin/spp/add') ?>" class="btn btn-primary d-block w-100 mb-2">Tambah Spp Baru</a>
+            <table id="datatable" class="table table-striped">
                 <thead>
                     <th>Id</th>
                     <th>Tahun</th>
@@ -17,31 +17,19 @@
                     <th>Aksi</th>
                 </thead>
                 <tbody>
-                    <?php if(count($spps) > 0) : ?>
-                        <?php foreach($spps as $spp) : ?>
-                            <tr>
-                                <td><?= $spp->id_spp ?></td>
-                                <td><?= $spp->tahun ?></td>
-                                <td><?= $spp->nominal ?></td>
-                                <td>
-                                    <a href="<?= site_url('admin/spp/edit/' . $spp->id_spp) ?>" class="btn btn-success" >Edit</a>
-                                    <a href="<?= site_url('admin/spp/delete/' . $spp->id_spp) ?>" class="btn btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                        <?php endforeach ?>
-                    <?php else : ?>
-                        <td colspan="4">Data tidak ditemukan.</td>
-                    <?php endif ?>
+                    <?php foreach($spps as $spp) : ?>
+                        <tr>
+                            <td><?= $spp->id_spp ?></td>
+                            <td><?= $spp->tahun ?></td>
+                            <td><?= $spp->nominal ?></td>
+                            <td>
+                                <a href="<?= site_url('admin/spp/edit/' . $spp->id_spp) ?>" class="btn btn-success" >Edit</a>
+                                <a href="<?= site_url('admin/spp/delete/' . $spp->id_spp) ?>" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
                 </tbody>
             </table>
         </div>
     </div>
-    <script>
-        window.addEventListener('DOMContentLoaded', event => {
-            const datatable = document.getElementById('datatable');
-            if (datatable) {
-                new simpleDatatables.DataTable(datatable);
-            }
-        });
-    </script>
 </div>

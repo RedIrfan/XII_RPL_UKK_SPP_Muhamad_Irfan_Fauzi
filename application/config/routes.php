@@ -90,3 +90,4 @@ $route["admin/spp/delete/(:any)"] = "adminspp/delete/$1";
 
 $route["admin/history"] = "adminpembayaran/history";
 $route["admin/transaksi"] = "adminpembayaran/transaksi";
+$route["admin/transaksi/insert"] = "adminpembayaran/transaksi_insert";

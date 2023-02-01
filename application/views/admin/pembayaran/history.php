@@ -40,12 +40,4 @@
             </table>
         </div>
     </div>
-    <script>
-        window.addEventListener('DOMContentLoaded', event => {
-            const datatable = document.getElementById('datatable');
-            if (datatable) {
-                new simpleDatatables.DataTable(datatable);
-            }
-        });
-    </script>
 </div>
