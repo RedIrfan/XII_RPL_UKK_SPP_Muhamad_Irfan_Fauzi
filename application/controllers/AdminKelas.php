@@ -7,6 +7,8 @@ class AdminKelas extends Admin {
     public function __construct()
     {
         parent::__construct();
+        $this->only_admin();
+        
         $this->load->model('kelas');
     }
 

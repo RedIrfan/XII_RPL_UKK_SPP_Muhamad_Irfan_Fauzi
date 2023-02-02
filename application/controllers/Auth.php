@@ -36,13 +36,17 @@ class Auth extends CI_Controller {
         $query = $this->petugas->get_where($username, $password);
 
         if (count($query) > 0){
-            $_SESSION['username'] = $username;
-            $_SESSION['level'] = $query->level;
-
-            redirect('admin');
+            $level = $query[0]->level;
+            $data = array(
+                "username" => $username,
+                "level" => $level
+            );
+            $this->session->set_userdata($data);
+            
+            redirect(site_url('admin'));
         }
         else{
-            redirect('login');
+            redirect(site_url('login'));
         }
     }
 
@@ -65,14 +69,9 @@ class Auth extends CI_Controller {
 
     public function logout()
     {
-        unset($_SESSION);
+        $this->session->sess_destroy();
 
         redirect('login');
-    }
-
-    public function testing($text)
-    {
-        echo $text;
     }
 
 

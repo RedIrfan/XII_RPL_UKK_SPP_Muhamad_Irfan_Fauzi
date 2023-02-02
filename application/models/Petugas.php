@@ -17,7 +17,7 @@
             return $this->db->get_where('petugas', array('id_petugas' => $id))->result();
         }
 
-        public function insert($username, $password, $nama_petugas, $level='petugas')
+        public function insert($username, $password, $nama_petugas, $level)
         {
             return $this->db->insert('petugas', array('username' => $username, 'password' => $password, 'nama_petugas' => $nama_petugas, 'level' => $level));
         }

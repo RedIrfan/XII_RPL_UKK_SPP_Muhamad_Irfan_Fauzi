@@ -58,6 +58,7 @@ $route["register"] = "auth/register";
 
 $route["login/auth"] = "auth/login_auth";
 $route["register/auth"] = "auth/register_auth";
+$route["logout"] = "auth/logout";
 
 $route["admin"] = "admin";
 
@@ -73,6 +74,7 @@ $route["admin/petugas/add"] = "adminpetugas/add";
 $route["admin/petugas/insert"] = "adminpetugas/insert";
 $route["admin/petugas/edit/(:any)"] = "adminpetugas/edit/$1";
 $route["admin/petugas/update/(:any)"] = "adminpetugas/update/$1";
+$route["admin/petugas/delete/(:any)"] = "adminpetugas/delete/$1";
 
 $route["admin/kelas"] = "adminkelas";
 $route["admin/kelas/add"] = "adminkelas/add";

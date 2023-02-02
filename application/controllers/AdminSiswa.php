@@ -7,6 +7,8 @@ class AdminSiswa extends Admin {
     public function __construct()
     {
         parent::__construct();
+        $this->only_admin();
+        
         $this->load->model('siswa');
         $this->load->model('kelas');
         $this->load->model('spp');
