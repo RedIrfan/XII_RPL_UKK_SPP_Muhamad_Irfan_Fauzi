@@ -6,17 +6,20 @@ class Auth extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        
-        if (isset($_SESSION)){
+
+        $this->load->model('petugas');
+        $this->load->view('header');
+    }
+
+    public function only_guest()
+    {
+        if (isset($_SESSION["username"])){
             if (isset($_SESSION['previous_page'])){
                 redirect($_SESSION["previous_page"]);
             } else{
                 redirect(site_url('home'));
             }
         }
-
-        $this->load->model('petugas');
-        $this->load->view('header');
     }
 
     public function view($view_path, $title="", $data=array())

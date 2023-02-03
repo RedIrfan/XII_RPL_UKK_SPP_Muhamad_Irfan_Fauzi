@@ -94,4 +94,4 @@ $route["admin/history"] = "adminpembayaran/history";
 $route["admin/transaksi"] = "adminpembayaran/transaksi";
 $route["admin/transaksi/insert"] = "adminpembayaran/transaksi_insert";
 
-$route["guest"] = "guest";
+$route["home"] = "guest";
