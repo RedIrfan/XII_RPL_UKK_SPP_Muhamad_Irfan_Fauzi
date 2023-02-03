@@ -3,13 +3,16 @@
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Dashboard</li>
     </ol>
-    <div class="card mb-4">
-        <div class="card-header">
-            <i class="fas fa-table me-1"></i>
-            DataTable Example
-        </div>
-        <div class="card-body">
-            sdasd
+    <div class="card border-0 mb-4 shadow-sm">
+        <div class="p-2">
+            <div class="card-header border-0 h4">
+                DataTable
+            </div>
+            <div class="card-body">
+                <div class='container'>
+                    sdasd
+                </div>
+            </div>
         </div>
     </div>
 </div>
