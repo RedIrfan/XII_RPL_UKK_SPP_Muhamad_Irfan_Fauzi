@@ -57,5 +57,5 @@
     <div class="col-2 collapse collapse-horizontal show sidenav" id="collapse-content">
         <div class="container mb-auto" style="height:81vh"></div>
     </div>
-    <div class='col'>
+    <div class='col h-100'>
     

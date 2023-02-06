@@ -95,3 +95,5 @@ $route["admin/transaksi"] = "adminpembayaran/transaksi";
 $route["admin/transaksi/insert"] = "adminpembayaran/transaksi_insert";
 
 $route["home"] = "guest";
+$route["spp/(:any)"] = "guest/spp/$1";
+$route["to_spp"] = "guest/to_spp";

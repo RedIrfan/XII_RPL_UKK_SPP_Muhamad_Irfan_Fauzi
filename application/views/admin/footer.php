@@ -1,15 +1,16 @@
-<footer class="py-4 bg-light mt-auto shadow-sm rounded-3 mx-4">
-    <div class="container-fluid px-4">
-        <div class="d-flex align-items-center justify-content-between">
-            <div class="text-muted">Copyright &copy; Your Website 2022</div>
-            <div>
-                <a href="#">Privacy Policy</a>
-                &middot;
-                <a href="#">Terms &amp; Conditions</a>
+    <footer class="py-4 bg-light mt-auto shadow-sm rounded-3 mx-4">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                <div>
+                    <a href="#">Privacy Policy</a>
+                    &middot;
+                    <a href="#">Terms &amp; Conditions</a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+    <br>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.js" crossorigin="anonymous"></script>
