@@ -15,14 +15,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <div class="navbar navbar-expand-lg bg-navbar navbar-dark text-white fixed-top">
-    <div class='container-fluid justify-content-start py-2 '>
+    <div class='container-fluid justify-content-start py-2 d-flex justify-content-between justify-content-lg-start'>
         <a class="navbar-brand col-2 me-0 ps-3" href="<?= site_url('admin') ?>">Irfan SPP</a>    
-        <a class="nav-link pe-3" id="offcanvas" href="#collapse-content" data-bs-toggle="collapse" data-bs-target="#collapse-content" aria-controls="collapse-content" aria-expanded="false"><i class="fas fa-bars"></i></a>
-        <div class='dropdown'>
-            <a class="nav-link dropdown-toggle" id="dropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user"></i></a>
-            <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdown">
-                <li><a class="dropdown-item" href="<?= site_url('logout') ?>">Logout</a></li>
-            </ul>
+        <div class='d-flex'>
+            <a class="nav-link pe-3" id="offcanvas" href="#collapse-content" data-bs-toggle="collapse" data-bs-target="#collapse-content" aria-controls="collapse-content" aria-expanded="false"><i class="fas fa-bars"></i></a>
+            <div class='dropdown'>
+                <a class="nav-link dropdown-toggle" id="dropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user"></i></a>
+                <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdown">
+                    <li><a class="dropdown-item" href="<?= site_url('logout') ?>">Logout</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -53,7 +55,7 @@
         </div>
     </div>
 </div>
-<div class="mx-0 d-flex h-100" style="margin-top:56px;">
+<div class="mx-0 row row-cols-12 h-100" style="margin-top:56px;">
     <div class="col-2 collapse collapse-horizontal show sidenav" id="collapse-content">
         <div class="container mb-auto" style="height:81vh"></div>
     </div>

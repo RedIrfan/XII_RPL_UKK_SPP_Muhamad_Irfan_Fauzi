@@ -9,7 +9,7 @@
                 List Pembayaran
             </div>
             <div class="card-body">
-                <table id="datatable" class="table">
+                <table id="datatable" class="table table-striped w-100">
                     <thead>
                         <th>Id</th>
                         <th>Petugas</th>

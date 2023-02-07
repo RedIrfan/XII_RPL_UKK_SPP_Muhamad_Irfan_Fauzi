@@ -23,7 +23,8 @@
 
         public function get_where_by_spp($id_spp)
         {
-            return $this->db->get_where('pembayaran', array('id_spp' => $id_spp))->result();
+            $this->join();
+            return $this->db->get_where('pembayaran', array('pembayaran.id_spp' => $id_spp))->result();
         }
 
         public function insert($id_petugas, $nisn, $tgl_bayar, $bulan_dibayar, $tahun_dibayar, $id_spp, $jumlah_bayar)

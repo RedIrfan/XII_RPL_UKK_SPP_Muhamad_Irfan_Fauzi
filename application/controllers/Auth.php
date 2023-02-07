@@ -27,6 +27,7 @@ class Auth extends CI_Controller {
         $data['title'] = $title;
 
         $this->load->view('header', $data);
+        $this->load->view('auth/header', $data);
         $this->load->view($view_path, $data);
     }
 

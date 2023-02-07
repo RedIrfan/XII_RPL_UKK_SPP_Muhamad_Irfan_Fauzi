@@ -8,6 +8,7 @@ class Guest extends CI_Controller {
         parent::__construct();
 
         $this->load->model('siswa');
+        $this->load->model('spp');
         $this->load->model('pembayaran');
     }
 
@@ -34,6 +35,7 @@ class Guest extends CI_Controller {
     public function spp($nisn)
     {   
         $data["student"] = $this->siswa->get_where($nisn)[0];
+        $data["spp"] = $this->spp->get_where($data["student"]->id_spp)[0];
         $data["histories"] = $this->pembayaran->get_where_by_spp($data["student"]->id_spp);
 
         $this->view('guest/spp', "SPP", $data);

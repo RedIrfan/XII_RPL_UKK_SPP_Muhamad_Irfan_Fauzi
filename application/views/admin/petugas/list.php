@@ -10,7 +10,7 @@
             </div>
             <div class="card-body">
                 <a href="<?= site_url('admin/petugas/add') ?>" class="btn btn-primary d-block w-100 mb-2">Tambah Petugas Baru</a>
-                <table id="datatable" class="table table-striped">
+                <table id="datatable" class="table table-striped w-100">
                     <thead>
                         <th>Id</th>
                         <th>Username</th>
