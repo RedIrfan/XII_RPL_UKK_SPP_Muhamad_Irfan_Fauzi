@@ -19,6 +19,7 @@ class Guest extends CI_Controller {
         $this->load->view('header', $data);
         $this->load->view('guest/header', $data);
         $this->load->view($view_path, $data);
+        $this->load->view('guest/footer', $data);
     }
 
     public function index()

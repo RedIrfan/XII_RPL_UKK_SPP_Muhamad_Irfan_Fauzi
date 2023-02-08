@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <div class="navbar navbar-expand-lg bg-navbar navbar-dark text-white fixed-top">
     <div class='container-fluid justify-content-start py-2 d-flex justify-content-between justify-content-lg-start'>
         <a class="navbar-brand col-2 me-0 ps-3" href="<?= site_url('admin') ?>">Irfan SPP</a>    
@@ -29,8 +30,8 @@
     </div>
 </div>
 
-<div class="" >
-    <div class="collapse collapse-horizontal show sidenav col-2  border-end border-2" id="collapse-content" style="position:fixed;">
+<div>
+    <div class="collapse collapse-horizontal show sidenav col-2  border-end border-2" id="collapse-content" style="position:fixed; margin-top:56px;">
         <div class="container mb-auto" style="height:81vh;">
             <ul class="nav flex-column px-2 pt-3">
                 <li class="nav-item">
@@ -55,9 +56,9 @@
         </div>
     </div>
 </div>
-<div class="mx-0 row row-cols-12 h-100" style="margin-top:56px;">
+<div class="mx-0 d-flex h-100" style="margin-top:56px;">
     <div class="col-2 collapse collapse-horizontal show sidenav" id="collapse-content">
         <div class="container mb-auto" style="height:81vh"></div>
     </div>
-    <div class='col h-100'>
+    <div class='w-100 h-100'>
     
