@@ -35,11 +35,14 @@
 </div>
 
 <div>
-    <div class="collapse collapse-horizontal show sidenav border-end border-2" id="collapse-content" style="position:fixed; padding-top:56px;">
-        <div class="container mb-auto" style="height:81vh; width:205px;">
+    <div class="collapse collapse-horizontal show sidenav border-end border-2 overflow-auto" id="collapse-content" style="position:fixed;">
+        <div id="sidebar-container" class="container mb-auto" style="height:545px; width:205px; padding-bottom:56px;">
             <ul class="nav flex-column px-2 pt-3">
                 <li class="nav-item">
-                    <h6 class="pt-4 fw-bolder">CORE</h6>
+                    <h6 class="pt-4 fw-bolder d-flex justify-content-between">
+                        CORE
+                        <button type="button" class="btn-close text-reset" style="visibility:hidden;" id="close-offcanvas" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </h6>
                     <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin') ?>">Dashboard</a>
                     <h6 class="pt-4 fw-bolder">CRUD</h6>
                     <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/kelas') ?>">Kelas</a>
@@ -60,6 +63,7 @@
         </div>
     </div>
 </div>
+<div id="offcanvas-backdrop" class=""></div>
 <div class="mx-0 d-flex h-100" style="margin-top:56px;">
     <div class="collapse collapse-horizontal show sidenav collapse-hidden" id="collapse-content" style="width:200px;">
         <div class="container mb-auto" style="height:81vh; width:200px;"></div>

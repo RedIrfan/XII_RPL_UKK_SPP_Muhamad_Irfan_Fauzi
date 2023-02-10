@@ -1,5 +1,5 @@
 <div class="h-100 col-lg-4 col-md-5 col-sm-5 mx-auto d-flex align-items-center">
-    <div class="card border-0 mb-4 shadow-sm h-50">
+    <div class="card border-0 mb-4 shadow-sm py-4">
         <div class="p-2 my-auto">
             <div class="card-header border-0 h4 text-center">
                 Register
