@@ -1,3 +1,4 @@
+    </div>
     <footer class="py-4 bg-light mt-auto shadow-sm rounded-3 mx-4">
         <div class="container-fluid px-4">
             <div class="d-flex align-items-center justify-content-between">

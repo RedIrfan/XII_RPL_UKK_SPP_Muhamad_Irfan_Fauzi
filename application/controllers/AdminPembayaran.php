@@ -23,7 +23,6 @@ class AdminPembayaran extends Admin {
 
     public function transaksi()
     {
-        $data["workers"] = $this->petugas->get();
         $data["students"] = $this->siswa->get();
         $data["spps"] = $this->spp->get();
 
@@ -32,7 +31,7 @@ class AdminPembayaran extends Admin {
 
     public function transaksi_insert()
     {
-        $petugas = $this->input->post('petugas');
+        $petugas = $_SESSION['username'];
         $siswa = $this->input->post('siswa');
         $tanggal = $this->input->post('tanggal');
         $bulan = $this->input->post('bulan');

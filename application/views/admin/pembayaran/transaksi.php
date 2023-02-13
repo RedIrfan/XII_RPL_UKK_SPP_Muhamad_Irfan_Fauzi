@@ -11,15 +11,6 @@
             <div class="card-body">
                 <form action="<?= site_url('admin/transaksi/insert') ?>" method="post">
                     <div class="row row-cols-2">
-                        <label for="petugas">Petugas</label>
-                        <div>
-                            <select name="petugas" id="petugas" class="form-select">
-                                <?php foreach($workers as $worker) : ?>
-                                    <option value="<?= $worker->id_petugas ?>"><?= $worker->username ?></option>
-                                <?php endforeach ?>
-                            </select>
-                        </div>
-
                         <label for="siswa">Siswa</label>
                         <div>
                             <select name="siswa" id="siswa" class="form-select">

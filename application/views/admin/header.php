@@ -44,11 +44,13 @@
                         <button type="button" class="btn-close text-reset" style="visibility:hidden;" id="close-offcanvas" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </h6>
                     <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin') ?>">Dashboard</a>
-                    <h6 class="pt-4 fw-bolder">CRUD</h6>
-                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/kelas') ?>">Kelas</a>
-                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/petugas') ?>">Petugas</a>
-                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/siswa') ?>">Siswa</a>
-                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/spp') ?>">SPP</a>
+                    <?php if ($_SESSION['level'] == 'admin') : ?>
+                        <h6 class="pt-4 fw-bolder">CRUD</h6>
+                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/kelas') ?>">Kelas</a>
+                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/petugas') ?>">Petugas</a>
+                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/siswa') ?>">Siswa</a>
+                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/spp') ?>">SPP</a>
+                    <?php endif ?>
                     <h6 class="pt-4 fw-bolder">LAPORAN</h6>
                     <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/transaksi') ?>">Transaksi Pembayaran</a>
                     <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/history') ?>">History</a>
@@ -68,5 +70,6 @@
     <div class="collapse collapse-horizontal show sidenav collapse-hidden" id="collapse-content" style="width:200px;">
         <div class="container mb-auto" style="height:81vh; width:200px;"></div>
     </div>
-    <div class='w-100 h-100'>
+    <div class='w-100 h-100 d-flex flex-column'>
+        <div class="main">
     

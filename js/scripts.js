@@ -16,14 +16,17 @@ function check_window_size(){
     var dropdown = $(".dropdown-menu");
     var width = $(window).width();
 
+    console.log(content.hasClass('collapse'));
     if (width < 768){
-        link.attr('data-bs-toggle', 'offcanvas');
-        hidden.removeClass("collapse show").addClass("w-0");
-        content.removeClass("collapse collapse-horizontal show").addClass("offcanvas offcanvas-start");
-        dropdown.removeClass("dropdown-menu-start").addClass("dropdown-menu-end");
-        content.css("padding-top", '0px');
-        content.find("#sidebar-container").removeClass("container").addClass("offcanvas-body w-100");
-        close.css("visibility", 'visible');
+        if (content.hasClass('collapse')){
+            link.attr('data-bs-toggle', 'offcanvas');
+            hidden.removeClass("collapse show").addClass("w-0");
+            content.removeClass("collapse collapse-horizontal show").addClass("offcanvas offcanvas-start");
+            dropdown.removeClass("dropdown-menu-start").addClass("dropdown-menu-end");
+            content.css("padding-top", '0px');
+            content.find("#sidebar-container").removeClass("container").addClass("offcanvas-body w-100");
+            close.css("visibility", 'visible');
+        }
     } else {
         $(".offcanvas-backdrop").remove();
         link.attr('data-bs-toggle', 'collapse');

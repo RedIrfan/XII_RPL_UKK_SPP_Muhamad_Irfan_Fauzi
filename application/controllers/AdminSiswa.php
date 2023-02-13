@@ -39,13 +39,20 @@ class AdminSiswa extends Admin {
         $no_telp = $this->input->post('no_telp');
         $spp = $this->input->post('spp');
 
-        $this->siswa->insert($nisn, $nis, $nama, $kelas, $alamat, $no_telp, $spp);
+        $check_nisn = $this->siswa->get_where_by_id($nisn);
 
-        if ($query){
-            redirect(site_url('admin/siswa'));
+        if (count($check_nisn) <= 0){
+            $this->siswa->insert($nisn, $nis, $nama, $kelas, $alamat, $no_telp, $spp);
+    
+            if ($query){
+                redirect(site_url('admin/siswa'));
+            } else{
+                redirect(site_url('admin/siswa/add/'));
+            }
         } else{
             redirect(site_url('admin/siswa/add/'));
         }
+
     }
 
     public function edit($nisn)
@@ -67,12 +74,18 @@ class AdminSiswa extends Admin {
         $no_telp = $this->input->post('no_telp');
         $spp = $this->input->post('spp');
 
-        $query = $this->siswa->update($nisn, $new_nisn, $nama, $kelas, $alamat, $no_telp, $spp);
+        $check_nisn = $this->siswa->get_where_by_id($new_nisn);
 
-        if ($query){
-            redirect(site_url('admin/siswa'));
+        if (count($check_nisn) <= 0){
+            $query = $this->siswa->update($nisn, $new_nisn, $nama, $kelas, $alamat, $no_telp, $spp);
+
+            if ($query){
+                redirect(site_url('admin/siswa'));
+            } else{
+                redirect(site_url('admin/siswa/edit/' . $nisn));
+            }
         } else{
-            redirect(site_url('admin/siswa/edit/'));
+            redirect(site_url('admin/siswa/edit/' . $nisn));
         }
     }
 

@@ -20,6 +20,11 @@
             return $this->db->get_where('siswa', array('nisn' => $nisn))->result();
         }
 
+        public function get_where_by_id($nisn)
+        {
+            return $this->db->get_where('siswa', array('nisn' => $nisn))->result();
+        }
+
         public function insert($nisn, $nis, $nama, $id_kelas, $alamat, $no_telp, $id_spp)
         {
             return $this->db->insert('siswa', array('nisn' => $nisn, 'nis' => $nis, 'nama' => $nama, 'id_kelas' => $id_kelas, 'alamat' => $alamat, 'no_telp' => $no_telp, 'id_spp' => $id_spp));
