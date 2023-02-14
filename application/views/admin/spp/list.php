@@ -22,7 +22,7 @@
                             <tr>
                                 <td><?= $spp->id_spp ?></td>
                                 <td><?= $spp->tahun ?></td>
-                                <td><?= $spp->nominal ?></td>
+                                <td>Rp<?= number_format($spp->nominal) ?></td>
                                 <td>
                                     <a href="<?= site_url('admin/spp/edit/' . $spp->id_spp) ?>" class="btn btn-success" >Edit</a>
                                     <a href="<?= site_url('admin/spp/delete/' . $spp->id_spp) ?>" class="btn btn-danger">Delete</a>

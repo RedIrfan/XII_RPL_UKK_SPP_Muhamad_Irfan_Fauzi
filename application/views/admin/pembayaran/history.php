@@ -31,7 +31,7 @@
                                     <td><?= $history->bulan_dibayar ?></td>
                                     <td><?= $history->tahun_dibayar ?></td>
                                     <td><?= $history->id_spp ?></td>
-                                    <td><?= $history->jumlah_bayar ?></td>
+                                    <td>Rp<?= number_format($history->jumlah_bayar) ?></td>
                                 </tr>
                             <?php endforeach ?>
                         <?php else : ?>
