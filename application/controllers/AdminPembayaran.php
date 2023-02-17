@@ -7,6 +7,7 @@ class AdminPembayaran extends Admin {
     public function __construct()
     {
         parent::__construct();
+        $this->load->library('pdf');
     }
 
     public function history()
@@ -87,5 +88,13 @@ class AdminPembayaran extends Admin {
         $query = $this->petugas->delete($id);
 
         redirect(site_url('admin/petugas'));
+    }
+
+    public function print_laporan(){
+        $data["histories"] = $this->pembayaran->get();
+
+        $this->load->view('admin/pembayaran/laporan', $data);
+        $html = $this->load->view('admin/pembayaran/laporan', $data, true);
+        $this->pdf->create_pdf($html, 'laporanpembayaran');
     }
 }

@@ -9,6 +9,7 @@
                 List Pembayaran
             </div>
             <div class="card-body">
+                <a href="<?= site_url('admin/laporan') ?>" class="btn btn-primary w-100 mb-2">Print Laporan</a>
                 <table id="datatable" class="table table-striped w-100">
                     <thead>
                         <th>Id</th>
