@@ -6,6 +6,10 @@ class Admin extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('siswa');
+        $this->load->model('pembayaran');
+        $this->load->model('petugas');
+        $this->load->model('spp');
 
         if (! isset($_SESSION["username"])){
             redirect(site_url('login'));
@@ -37,6 +41,11 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-        $this->view('admin/dashboard', 'Dashboard');
+        $data['workers'] = $this->petugas->get();
+        $data['students'] = $this->siswa->get();
+        $data['spps'] = $this->spp->get();
+        $data["histories"] = $this->pembayaran->get();
+
+        $this->view('admin/dashboard', 'Dashboard', $data);
 	}
 }

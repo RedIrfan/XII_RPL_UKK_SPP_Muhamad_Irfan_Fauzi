@@ -7,11 +7,6 @@ class AdminPembayaran extends Admin {
     public function __construct()
     {
         parent::__construct();
-        
-        $this->load->model('pembayaran');
-        $this->load->model('petugas');
-        $this->load->model('siswa');
-        $this->load->model('spp');
     }
 
     public function history()

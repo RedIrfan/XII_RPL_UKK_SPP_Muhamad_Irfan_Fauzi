@@ -16,7 +16,7 @@
 <link href="<?= base_url('css/styles.css') ?>" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://kit.fontawesome.com/20be270774.css"  crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <div class="navbar bg-navbar navbar-dark text-white fixed-top">
     <div class='container-fluid justify-content-start py-2 d-flex justify-content-between justify-content-md-start'>
@@ -43,17 +43,17 @@
                         CORE
                         <button type="button" class="btn-close text-reset" style="visibility:hidden;" id="close-offcanvas" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </h6>
-                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin') ?>">Dashboard</a>
+                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin') ?>"><i class="fa-solid fa-gauge me-2"></i>Dashboard</a>
                     <?php if ($_SESSION['level'] == 'admin') : ?>
                         <h6 class="pt-4 fw-bolder">CRUD</h6>
-                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/kelas') ?>">Kelas</a>
-                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/petugas') ?>">Petugas</a>
-                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/siswa') ?>">Siswa</a>
-                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/spp') ?>">SPP</a>
+                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/kelas') ?>"><i class="fa-solid fa-box me-2"></i>Kelas</a>
+                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/petugas') ?>"><i class="fa-solid fa-user me-2"></i>Petugas</a>
+                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/siswa') ?>"><i class="fa-sharp fa-solid fa-graduation-cap me-2"></i>Siswa</a>
+                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/spp') ?>"><i class="fa-solid fa-scroll me-2"></i>SPP</a>
                     <?php endif ?>
                     <h6 class="pt-4 fw-bolder">LAPORAN</h6>
-                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/transaksi') ?>">Transaksi Pembayaran</a>
-                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/history') ?>">History</a>
+                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/transaksi') ?>"><i class="fa-solid fa-money-bill me-2"></i>Transaksi Pembayaran</a>
+                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/history') ?>"><i class="fa-solid fa-receipt me-2"></i>History</a>
                 </li>
             </ul>
         </div>

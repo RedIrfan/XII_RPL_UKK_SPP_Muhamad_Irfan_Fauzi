@@ -1,13 +1,9 @@
     </div>
     <footer class="py-4 bg-light mt-auto shadow-sm rounded-3 mx-4">
         <div class="container-fluid px-4">
-            <div class="d-flex align-items-center justify-content-between">
-                <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                <div>
-                    <a href="#">Privacy Policy</a>
-                    &middot;
-                    <a href="#">Terms &amp; Conditions</a>
-                </div>
+            <div class="d-flex align-items-center justify-content-between text-muted">
+                <div>Irfan Spp</div>
+                <div>Copyright &copy; Irfan Spp 2023</div>
             </div>
         </div>
     </footer>
