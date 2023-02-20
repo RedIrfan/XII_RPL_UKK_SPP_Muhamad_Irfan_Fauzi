@@ -20,7 +20,7 @@
 
 <div class="navbar bg-navbar navbar-dark text-white fixed-top">
     <div class='container-fluid justify-content-start py-2 d-flex justify-content-between justify-content-md-start'>
-        <a class="navbar-brand me-0 ps-3" style="width:205px;" href="<?= site_url('admin') ?>">Irfan SPP</a>    
+        <a class="navbar-brand me-0 ps-3" style="width:230px;" href="<?= site_url('admin') ?>">Irfan SPP</a>    
         <div class='d-flex'>
             <p id="tes"></p>
             <a class="nav-link pe-3 collapse-link" id="collapse-link" href="#collapse-content" data-bs-toggle="collapse" data-bs-target="#collapse-content" aria-controls="collapse-content" aria-expanded="false"><i class="fas fa-bars"></i></a>
@@ -36,24 +36,24 @@
 
 <div>
     <div class="collapse collapse-horizontal show sidenav border-end border-2 overflow-auto" id="collapse-content" style="position:fixed;">
-        <div id="sidebar-container" class="container mb-auto" style="height:545px; width:205px; padding-bottom:56px;">
+        <div id="sidebar-container" class="container mb-auto" style="height:545px; width:230px; padding-bottom:56px;">
             <ul class="nav flex-column px-2 pt-3">
                 <li class="nav-item">
                     <h6 class="pt-4 fw-bolder d-flex justify-content-between">
                         CORE
                         <button type="button" class="btn-close text-reset" style="visibility:hidden;" id="close-offcanvas" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </h6>
-                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin') ?>"><i class="fa-solid fa-gauge me-2"></i>Dashboard</a>
+                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin') ?>"><i class="fa-solid fa-gauge col-1 me-2"></i>Dashboard</a>
                     <?php if ($_SESSION['level'] == 'admin') : ?>
                         <h6 class="pt-4 fw-bolder">CRUD</h6>
-                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/kelas') ?>"><i class="fa-solid fa-box me-2"></i>Kelas</a>
-                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/petugas') ?>"><i class="fa-solid fa-user me-2"></i>Petugas</a>
-                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/siswa') ?>"><i class="fa-sharp fa-solid fa-graduation-cap me-2"></i>Siswa</a>
-                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/spp') ?>"><i class="fa-solid fa-scroll me-2"></i>SPP</a>
+                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/kelas') ?>"><i class="fa-solid fa-box col-1 me-2"></i>Kelas</a>
+                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/petugas') ?>"><i class="fa-solid fa-user col-1 me-2"></i>Petugas</a>
+                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/siswa') ?>"><i class="fa-sharp fa-solid col-1 fa-graduation-cap me-2"></i>Siswa</a>
+                        <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/spp') ?>"><i class="fa-solid fa-scroll col-1 me-2"></i>SPP</a>
                     <?php endif ?>
                     <h6 class="pt-4 fw-bolder">LAPORAN</h6>
-                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/transaksi') ?>"><i class="fa-solid fa-money-bill me-2"></i>Transaksi Pembayaran</a>
-                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/history') ?>"><i class="fa-solid fa-receipt me-2"></i>History</a>
+                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/transaksi') ?>"><i class="fa-solid fa-money-bill col-1 me-2"></i>Transaksi Pembayaran</a>
+                    <a class="ps-2 d-block pt-2 link-secondary" href="<?= site_url('admin/history') ?>"><i class="fa-solid fa-receipt col-1 me-2"></i>History</a>
                 </li>
             </ul>
         </div>
@@ -67,8 +67,8 @@
 </div>
 <div id="offcanvas-backdrop" class=""></div>
 <div class="mx-0 d-flex h-100" style="margin-top:56px;">
-    <div class="collapse collapse-horizontal show sidenav collapse-hidden" id="collapse-content" style="width:200px;">
-        <div class="container mb-auto" style="height:81vh; width:200px;"></div>
+    <div class="collapse collapse-horizontal show sidenav collapse-hidden" id="collapse-content" style="width:230px;">
+        <div class="container mb-auto" style="height:81vh; width:230px;"></div>
     </div>
     <div class='w-100 h-100 d-flex flex-column'>
         <div class="main">

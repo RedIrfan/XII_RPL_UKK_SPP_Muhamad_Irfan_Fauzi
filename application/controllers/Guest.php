@@ -30,7 +30,13 @@ class Guest extends CI_Controller {
     public function to_spp()
     {
         $nisn = $_POST["nisn"];
-        redirect(site_url('spp/' . $nisn));
+
+        $check_student = $this->siswa->get_where($nisn);
+
+        if (count($check_student)){
+            redirect(site_url('spp/' . $nisn));
+        }
+        redirect(site_url('home'));
     }
 
     public function spp($nisn)
