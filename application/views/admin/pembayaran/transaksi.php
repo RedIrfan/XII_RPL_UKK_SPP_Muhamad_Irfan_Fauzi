@@ -35,15 +35,6 @@
                             <input type="text" name="tahun" id="tahun" class="form-control">
                         </div>
 
-                        <label for="spp">Spp</label>
-                        <div>
-                            <select name="spp" id="spp" class="form-select">
-                                <?php foreach($spps as $spp) : ?>
-                                    <option value="<?= $spp->id_spp ?>"><?= $spp->id_spp ?></option>
-                                <?php endforeach ?>
-                            </select>
-                        </div>
-
                         <label for="jumlah">Jumlah Bayar</label>
                         <div>
                             <input type="number" name="jumlah" id="jumlah" class="form-control">

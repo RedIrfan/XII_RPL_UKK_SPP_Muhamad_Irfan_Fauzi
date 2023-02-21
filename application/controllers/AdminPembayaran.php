@@ -27,67 +27,21 @@ class AdminPembayaran extends Admin {
 
     public function transaksi_insert()
     {
-        $petugas = $_SESSION['username'];
+        $petugas = $this->petugas->get_where_by_username($_SESSION['username'])[0];
         $siswa = $this->input->post('siswa');
         $tanggal = $this->input->post('tanggal');
         $bulan = $this->input->post('bulan');
         $tahun = $this->input->post('tahun');
-        $spp = $this->input->post('spp');
+        $spp = $this->siswa->get_where($siswa)[0];
         $jumlah = $this->input->post('jumlah');
 
-        $query = $this->pembayaran->insert($petugas, $siswa, $tanggal, $bulan, $tahun, $spp, $jumlah);
+        $query = $this->pembayaran->insert($petugas->id_petugas, $siswa, $tanggal, $bulan, $tahun, $spp->id_spp, $jumlah);
 
         if ($query){
             redirect(site_url('admin/history'));
         } else{
             redirect(site_url('admin/transaksi'));
         }
-    }
-
-    public function insert()
-    {
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
-        $nama_petugas = $this->input->post('nama');
-        $level = $this->input->post('level');
-
-        $query = $this->petugas->insert($username, $password, $nama_petugas, $level);
-
-        if ($query){
-            redirect(site_url('admin/petugas'));
-        } else{
-            redirect(site_url('admin/petugas/add'));
-        }
-    }
-
-    public function edit($id)
-    {
-        $data["worker"] = $this->petugas->get_where_with_id($id)[0];
-
-        $this->view('admin/petugas/edit', "Petugas Edit", $data);
-    }
-
-    public function update($id)
-    {
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
-        $nama_petugas = $this->input->post('nama');
-        $level = $this->input->post('level');
-
-        $query = $this->petugas->update($id, $username, $password, $nama_petugas, $level);
-
-        if($query){
-            redirect(site_url('admin/petugas'));
-        } else{
-            redirect(site_url('admin/petugas/edit'));
-        }
-    }
-
-    public function delete($id)
-    {
-        $query = $this->petugas->delete($id);
-
-        redirect(site_url('admin/petugas'));
     }
 
     public function print_laporan(){
