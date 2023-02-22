@@ -1,5 +1,6 @@
-$(document).ready(function() {
-    $('#datatable').DataTable( {
+var 
+$(window).ready(function() {
+    var datatable = $('#datatable').DataTable({
         responsive: true,
         scrollX : true,
         "language": {
@@ -16,5 +17,26 @@ $(document).ready(function() {
                 "previous" : "Sebelumnya"
             }
         }
-    } );
-} );
+    });
+
+    datatable.on('search.dt', function(){
+        var values = $('.dataTables_filter input').val().split(":");
+        
+
+    });
+});
+function initDatatable(){
+    
+
+    var tfoots = $('.dataTables_scrollFootInner tfoot tr th');
+    var searchColumns = getDatatableParams();
+    console.log(searchColumns[2]);
+    
+    $.each([0, tfoots.length], function(i) {
+        var item = tfoots.eq(i);
+        var currentColumn = searchColumns[i];
+        var title = item.text();
+        
+        item.html( '<input type="text" placeholder="Cari ' + title + '" />');
+    });
+}

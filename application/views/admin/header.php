@@ -14,7 +14,7 @@
     }
 </style>
 <link href="<?= base_url('css/styles.css') ?>" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://kit.fontawesome.com/20be270774.css"  crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -35,7 +35,7 @@
 </div>
 
 <div>
-    <div class="collapse collapse-horizontal show sidenav border-end border-2 overflow-auto" id="collapse-content" style="position:fixed;">
+    <div class="collapse collapse-horizontal show sidenav border-end border-2 overflow-auto" id="collapse-content" style="position:fixed; padding-top:56px;">
         <div id="sidebar-container" class="container mb-auto" style="height:545px; width:230px; padding-bottom:56px;">
             <ul class="nav flex-column px-2 pt-3">
                 <li class="nav-item">

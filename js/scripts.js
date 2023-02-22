@@ -8,15 +8,13 @@ $(window).resize(function(){
     check_window_size();
 });
 
-function check_window_size(){
-    var content = $('#collapse-content');
+function check_window_size(){var content = $('#collapse-content');
     var hidden = $('.collapse-hidden');
     var link = $("#collapse-link");
     var close = $("#close-offcanvas");
     var dropdown = $(".dropdown-menu");
     var width = $(window).width();
 
-    console.log(content.hasClass('collapse'));
     if (width < 768){
         if (content.hasClass('collapse')){
             link.attr('data-bs-toggle', 'offcanvas');
@@ -39,3 +37,5 @@ function check_window_size(){
         close.css("visibility", 'hidden');
     }
 }
+
+    
