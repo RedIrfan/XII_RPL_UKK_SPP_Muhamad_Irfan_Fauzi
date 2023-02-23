@@ -10,15 +10,15 @@
             </div>
             <div class="card-body">
                 <a href="<?= site_url('admin/siswa/add') ?>" class="btn btn-primary d-block w-100 mb-2">Tambah Siswa Baru</a>
-                <table id="datatable" class="display compact w-100">
+                <table id="datatable" class="table table-striped w-100">
                     <thead>
-                        <th>Nisn</th>
-                        <th>Nis</th>
-                        <th>Nama</th>
-                        <th>Kelas</th>
-                        <th>Alamat</th>
-                        <th>No Telp</th>
-                        <th>Spp</th>
+                        <th class="nisn">Nisn</th>
+                        <th class="nis">Nis</th>
+                        <th class="nama">Nama</th>
+                        <th class="kelas">Kelas</th>
+                        <th class="alamat">Alamat</th>
+                        <th class="no_telp no telp">No Telp</th>
+                        <th class="spp">Spp</th>
                         <th>Aksi</th>
                     </thead>
                     <tbody>
@@ -49,6 +49,18 @@
 </div>
 <script>
     function getDatatableParams(){
-        return [0,0,0,0,0,0];
+        return {
+            "search" : {
+                "nisn" : "nisn",
+                "nis" : "nis",
+                "nama" : "nama",
+                "kelas" : "nama_kelas",
+                "alamat" : "alamat",
+                "no_telp" : "no_telp",
+                "no" : "no_telp",
+                "telp" : "no_telp",
+                "spp" : "id_spp"
+            }
+        };
     }
 </script>

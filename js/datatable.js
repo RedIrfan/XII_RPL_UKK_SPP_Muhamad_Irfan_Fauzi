@@ -1,5 +1,4 @@
-var 
-$(window).ready(function() {
+$(document).ready(function() {
     var datatable = $('#datatable').DataTable({
         responsive: true,
         scrollX : true,
@@ -18,12 +17,42 @@ $(window).ready(function() {
             }
         }
     });
+    var datatableParams = getDatatableParams();
+    var filterTerm;
 
-    datatable.on('search.dt', function(){
-        var values = $('.dataTables_filter input').val().split(":");
+    // datatable.on('search.dt', function(){
+    //     var values = $('.dataTables_filter input').val().split(":");
         
+    //     if (values.length > 1) {
+    //         $.each([datatableParams], function(i, item){
 
+    //         })
+    //     }
+    // });
+
+    $('.dataTables_filter input').off().on('keyup change', function(){
+        var values = this.value.split(":");
+        filterTerm = this.value.trim();
+        
+        if (values.length >= 2){
+            var columnName = datatableParams['search'];
+            console.log(columnName.data());
+            // datatable.columns('.' . datatableParams['search'][values[0]]).search().draw();
+        }
+        else{
+            datatable.search(filterTerm).draw();
+        }
+        
+        console.log(values.length);
     });
+
+    // $.fn.dataTable.ext.search.push(
+        
+    //     function(settings, rowData, dataIndex){
+    //         console.log(rowData)
+    //         return true
+    //     }
+    // )
 });
 function initDatatable(){
     
