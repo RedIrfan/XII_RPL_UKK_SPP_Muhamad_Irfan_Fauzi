@@ -1,4 +1,4 @@
-<div class="container-fluid px-4">
+<div class="container px-4">
     <h1 class="mt-4">Siswa</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Siswa</li>
@@ -48,19 +48,19 @@
     </div>
 </div>
 <script>
-    function getDatatableParams(){
-        return {
-            "search" : {
-                "nisn" : 0,
-                "nis" : 1,
-                "nama" : 2,
-                "kelas" : 3, 
-                "alamat" : 4,
-                "no_telp" : 5,
-                "no" : 6,
-                "telp" : 7,
-                "spp" : 8,
-            }
-        };
-    }
+    // function getDatatableParams(){
+    //     return {
+    //         "search" : {
+    //             "nisn" : 0,
+    //             "nis" : 1,
+    //             "nama" : 2,
+    //             "kelas" : 3, 
+    //             "alamat" : 4,
+    //             "no_telp" : 5,
+    //             "no" : 6,
+    //             "telp" : 7,
+    //             "spp" : 8,
+    //         }
+    //     };
+    // }
 </script>

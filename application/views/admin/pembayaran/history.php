@@ -1,4 +1,4 @@
-<div class="container-fluid px-4">
+<div class="container px-4">
     <h1 class="mt-4">History Pembayaran</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">History Pembayaran</li>
@@ -10,7 +10,23 @@
             </div>
             <div class="card-body">
                 <a href="<?= site_url('admin/laporan') ?>" class="btn btn-primary w-100 mb-2">Print Laporan</a>
-                <table id="datatable" class="table table-striped w-100">
+                <div class="d-flex align-items-center mb-2">
+                    <label for="minDate" class="me-2">Dari</label>
+                    <select name="minDate" id="minDate" class="form-select">
+                        <option value="0">yyyy-mm-dd</option>
+                        <?php foreach($histories as $history) : ?>
+                            <option value="<?= $history->tgl_bayar ?>"><?= $history->tgl_bayar ?></option>
+                        <?php endforeach ?>
+                    </select>
+                    <label for="maxDate" class="mx-2">Ke</label>
+                    <select name="maxDate" id="maxDate" class="form-select">
+                        <option value="0">yyyy-mm-dd</option>
+                        <?php foreach($histories as $history) : ?>
+                            <option value="<?= $history->tgl_bayar ?>"><?= $history->tgl_bayar ?></option>
+                        <?php endforeach ?>
+                    </select>
+                </div>
+                <table id="datatable" class="overflow-auto table table-striped w-100">
                     <thead>
                         <th>Id</th>
                         <th>Petugas</th>

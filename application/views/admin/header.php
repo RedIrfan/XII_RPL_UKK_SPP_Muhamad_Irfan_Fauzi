@@ -12,6 +12,11 @@
     .w-0{
         width: 0 !important;
     }
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        display: none !important;
+        -webkit-appearance: none !important;
+    }
 </style>
 <link href="<?= base_url('css/styles.css') ?>" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css">
@@ -34,9 +39,9 @@
     </div>
 </div>
 
-<div>
-    <div class="collapse collapse-horizontal show sidenav border-end border-2 overflow-auto" id="collapse-content" style="position:fixed; padding-top:56px;">
-        <div id="sidebar-container" class="container mb-auto" style="height:545px; width:230px; padding-bottom:56px;">
+<div class="">
+    <div class="mainside d-flex flex-column collapse collapse-horizontal show sidenav border-end border-2 overflow-auto h-100" id="collapse-content" style="position:fixed; padding-top:56px;">
+        <div id="sidebar-container main" class="container mb-auto" style="width:230px; padding-bottom:56px;">
             <ul class="nav flex-column px-2 pt-3">
                 <li class="nav-item">
                     <h6 class="pt-4 fw-bolder d-flex justify-content-between">
@@ -57,7 +62,7 @@
                 </li>
             </ul>
         </div>
-        <div class="bg-primary p-2">
+        <div class="bg-primary p-2 ">
             <div class='container'>
                 <h6>Sebagai:</h6>
                 <h6><?= $_SESSION['username'] . ' (' . $_SESSION['level'] . ")"?></h6>
