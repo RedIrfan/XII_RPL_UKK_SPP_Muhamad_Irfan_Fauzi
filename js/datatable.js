@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    var datatableParams = getDatatableParams();
     var datatable = $('#datatable').DataTable({
         responsive: true,
         scrollX : true,
@@ -15,57 +16,52 @@ $(document).ready(function() {
                 "next" : "Berikutnya",
                 "previous" : "Sebelumnya"
             }
+        },
+        initComplete: function(){
+            $('.dataTables_filter input').off();
+
+            this.api().columns().every(function(){
+                var column = this;
+    
+                $('.dataTables_filter input').on('keyup change clear', function(){
+                    var values = this.value.split(":");
+                    var term = values[0];
+                    
+                    if (values.length >= 2){
+                        columnIndex = datatableParams['search'][values[0]];
+                        term = values[1];
+                    }
+                    
+                    console.log(column.data().filter());
+                    if (column.data().filter(item => item.indexOf(term) > -1).length > 0){
+                        column.search(term).draw();
+                    }
+                });
+            });
         }
     });
-    var datatableParams = getDatatableParams();
-    var filterTerm;
 
-    // datatable.on('search.dt', function(){
-    //     var values = $('.dataTables_filter input').val().split(":");
-        
-    //     if (values.length > 1) {
-    //         $.each([datatableParams], function(i, item){
+    // $('.dataTables_filter input').off().on('keyup change', function(){
+    //     var values = this.value.split(":");
 
-    //         })
+    //     if (values.length >= 2){
+    //         var columnIndex = datatableParams['search'][values[0]];
+            
+    //         datatable.columns(columnIndex).search(values[1]).draw();
     //     }
+    //     else{
+    //         console.log("gk");
+    //         datatable.search(values[0]).draw();
+    //     }    
+
+    //     datatable.columns().every(function(){
+    //         var column = this;
+
+
+    //     });
+
+    //     datatable.draw();
+    //     console.log(datatable);
     // });
 
-    $('.dataTables_filter input').off().on('keyup change', function(){
-        var values = this.value.split(":");
-        filterTerm = this.value.trim();
-        
-        if (values.length >= 2){
-            var columnName = datatableParams['search'];
-            console.log(columnName.data());
-            // datatable.columns('.' . datatableParams['search'][values[0]]).search().draw();
-        }
-        else{
-            datatable.search(filterTerm).draw();
-        }
-        
-        console.log(values.length);
-    });
-
-    // $.fn.dataTable.ext.search.push(
-        
-    //     function(settings, rowData, dataIndex){
-    //         console.log(rowData)
-    //         return true
-    //     }
-    // )
 });
-function initDatatable(){
-    
-
-    var tfoots = $('.dataTables_scrollFootInner tfoot tr th');
-    var searchColumns = getDatatableParams();
-    console.log(searchColumns[2]);
-    
-    $.each([0, tfoots.length], function(i) {
-        var item = tfoots.eq(i);
-        var currentColumn = searchColumns[i];
-        var title = item.text();
-        
-        item.html( '<input type="text" placeholder="Cari ' + title + '" />');
-    });
-}

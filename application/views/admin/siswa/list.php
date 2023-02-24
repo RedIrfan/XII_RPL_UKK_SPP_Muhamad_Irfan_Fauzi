@@ -51,15 +51,15 @@
     function getDatatableParams(){
         return {
             "search" : {
-                "nisn" : "nisn",
-                "nis" : "nis",
-                "nama" : "nama",
-                "kelas" : "nama_kelas",
-                "alamat" : "alamat",
-                "no_telp" : "no_telp",
-                "no" : "no_telp",
-                "telp" : "no_telp",
-                "spp" : "id_spp"
+                "nisn" : 0,
+                "nis" : 1,
+                "nama" : 2,
+                "kelas" : 3, 
+                "alamat" : 4,
+                "no_telp" : 5,
+                "no" : 6,
+                "telp" : 7,
+                "spp" : 8,
             }
         };
     }
