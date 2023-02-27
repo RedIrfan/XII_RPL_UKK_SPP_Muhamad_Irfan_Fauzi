@@ -98,7 +98,7 @@
                             <td><?= $history->nisn . ' - ' . $history->nama ?></td>
                             <td><?= $history->tgl_bayar ?></td>
                             <td><?= $history->bulan_dibayar ?></td>
-                            <td><?= $history->tahun_dibayar ?></td>
+                            <td><?= round($history->bulan_dibayar / 12) ?></td>
                             <td><?= $history->id_spp . ' Rp' . number_format($history->nominal) ?></td>
                             <td><?= 'Rp' .  number_format($history->jumlah_bayar) ?></td>
                         </tr>

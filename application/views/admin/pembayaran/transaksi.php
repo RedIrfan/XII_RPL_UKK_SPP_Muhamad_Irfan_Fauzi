@@ -4,6 +4,7 @@
         <li class="breadcrumb-item active">Transaksi Pembayaran</li>
     </ol>
     <div class="card border-0 mb-4 shadow-sm">
+        <form action="<?= site_url('admin/transaksi/insert') ?>" method="post">
         <div class="p-2">
             <div class="card-header border-0 h4 row row-cols-2 justify-content-between ">
                 <div class="col">
@@ -12,12 +13,11 @@
                 <div class="d-flex h6 align-items-center">
                     <label for="tanggal" class="text-muted me-2 d-block ms-auto">Tanggal</label>
                     <div class="overflow-auto">
-                        <input type="date" name="tanggal" id="tanggal" class="form-control" disabled value="<?= date('Y-m-d') ?>">
+                        <input type="date" name="tanggal" id="tanggal" class="form-control" readonly="true" value="<?= date('Y-m-d') ?>">
                     </div>
                 </div>
             </div>
             <div class="card-body">
-                <form action="<?= site_url('admin/transaksi/insert') ?>" method="post">
                     <div class="row row-cols-2">
                         <label for="siswa">Siswa</label>
                         <div>
@@ -30,12 +30,7 @@
 
                         <label for="bulan">Bulan Dibayar</label>
                         <div>
-                            <input type="text" name="bulan" id="bulan" class="form-control">
-                        </div>
-
-                        <label for="tahun">Tahun Dibayar</label>
-                        <div>
-                            <input type="text" name="tahun" id="tahun" class="form-control">
+                            <input type="number" name="bulan" id="bulan" class="form-control">
                         </div>
 
                         <label for="jumlah">Jumlah Bayar</label>

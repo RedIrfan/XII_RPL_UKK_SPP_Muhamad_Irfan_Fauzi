@@ -13,7 +13,7 @@
                 <table id="datatable" class="table table-striped w-100">
                     <thead>
                         <th>Id</th>
-                        <th>Tahun</th>
+                        <th>Bulan</th>
                         <th>Nominal</th>
                         <th>Aksi</th>
                     </thead>
@@ -21,7 +21,7 @@
                         <?php foreach($spps as $spp) : ?>
                             <tr>
                                 <td><?= $spp->id_spp ?></td>
-                                <td><?= $spp->tahun ?></td>
+                                <td><?= $spp->bulan ?></td>
                                 <td>Rp<?= number_format($spp->nominal) ?></td>
                                 <td>
                                     <a href="<?= site_url('admin/spp/edit/' . $spp->id_spp) ?>" class="btn btn-success" >Edit</a>

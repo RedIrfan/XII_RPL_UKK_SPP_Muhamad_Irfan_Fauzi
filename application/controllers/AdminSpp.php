@@ -26,10 +26,10 @@ class AdminSpp extends Admin {
 
     public function insert()
     {
-        $tahun = $this->input->post('tahun');
+        $bulan = $this->input->post('bulan');
         $nominal = $this->input->post('nominal');
 
-        $query = $this->spp->insert($tahun, $nominal);
+        $query = $this->spp->insert($bulan, $nominal);
 
         if ($query){
             redirect(site_url('admin/spp'));
@@ -47,10 +47,10 @@ class AdminSpp extends Admin {
 
     public function update($id)
     {
-        $tahun = $this->input->post('tahun');
+        $bulan = $this->input->post('bulan');
         $nominal = $this->input->post('nominal');
 
-        $query = $this->spp->update($id, $tahun, $nominal);
+        $query = $this->spp->update($id, $bulan, $nominal);
 
         if($query){
             redirect(site_url('admin/spp'));

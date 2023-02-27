@@ -37,12 +37,12 @@ class AdminSiswa extends Admin {
         $kelas = $this->input->post('kelas');
         $alamat = $this->input->post('alamat');
         $no_telp = $this->input->post('no_telp');
-        $spp = $this->input->post('spp');
 
         $check_nisn = $this->siswa->get_where_by_id($nisn);
 
         if (count($check_nisn) <= 0){
-            $this->siswa->insert($nisn, $nis, $nama, $kelas, $alamat, $no_telp, $spp);
+            $this->spp->insert(0, 0);
+            $query = $this->siswa->insert($nisn, $nis, $nama, $kelas, $alamat, $no_telp, array_slice($this->spp->get(), -1, 1)[0]->id_spp );
     
             if ($query){
                 redirect(site_url('admin/siswa'));
@@ -74,9 +74,12 @@ class AdminSiswa extends Admin {
         $no_telp = $this->input->post('no_telp');
         $spp = $this->input->post('spp');
 
-        $check_nisn = $this->siswa->get_where_by_id($new_nisn);
+        $check_nisn = 1;
+        if ($new_nisn != $nisn){
+            $check_nisn = count($this->siswa->get_where_by_id($new_nisn));
+        }
 
-        if (count($check_nisn) <= 0){
+        if ($check_nisn <= 0){
             $query = $this->siswa->update($nisn, $new_nisn, $nama, $kelas, $alamat, $no_telp, $spp);
 
             if ($query){

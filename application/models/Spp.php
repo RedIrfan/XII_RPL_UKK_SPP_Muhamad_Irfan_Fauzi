@@ -12,15 +12,15 @@
             return $this->db->get_where('spp', array('id_spp' => $id))->result();
         }
 
-        public function insert($tahun, $nominal)
+        public function insert($bulan, $nominal)
         {
-            return $this->db->insert('spp', array('tahun' => $tahun, 'nominal' => $nominal));
+            return $this->db->insert('spp', array('bulan' => $bulan, 'nominal' => $nominal));
         }
 
-        public function update($id, $tahun, $nominal)
+        public function update($id, $bulan, $nominal)
         {
             $this->db->where('id_spp', $id);
-            return $this->db->update('spp', array('tahun' => $tahun, 'nominal' => $nominal));
+            return $this->db->update('spp', array('bulan' => $bulan, 'nominal' => $nominal));
         }
 
         public function delete($id)

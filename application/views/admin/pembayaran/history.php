@@ -38,22 +38,18 @@
                         <th>Jumlah Bayar</th>
                     </thead>
                     <tbody>
-                        <?php if(count($histories) > 0) : ?>
-                            <?php foreach($histories as $history) : ?>
-                                <tr>
-                                    <td><?= $history->id_pembayaran ?></td>
-                                    <td><?= $history->nama_petugas ?></td>
-                                    <td><?= $history->nama ?></td>
-                                    <td><?= $history->tgl_bayar ?></td>
-                                    <td><?= $history->bulan_dibayar ?></td>
-                                    <td><?= $history->tahun_dibayar ?></td>
-                                    <td><?= $history->id_spp ?></td>
-                                    <td>Rp<?= number_format($history->jumlah_bayar) ?></td>
-                                </tr>
-                            <?php endforeach ?>
-                        <?php else : ?>
-                            <td colspan="8">Data tidak ditemukan.</td>
-                        <?php endif ?>
+                        <?php foreach($histories as $history) : ?>
+                            <tr>
+                                <td><?= $history->id_pembayaran ?></td>
+                                <td><?= $history->nama_petugas ?></td>
+                                <td><?= $history->nama ?></td>
+                                <td><?= $history->tgl_bayar ?></td>
+                                <td><?= $history->bulan_dibayar ?></td>
+                                <td><?= round($history->bulan_dibayar / 12) ?></td>
+                                <td><?= $history->id_spp ?></td>
+                                <td>Rp<?= number_format($history->jumlah_bayar) ?></td>
+                            </tr>
+                        <?php endforeach ?>
                     </tbody>
                 </table>
             </div>

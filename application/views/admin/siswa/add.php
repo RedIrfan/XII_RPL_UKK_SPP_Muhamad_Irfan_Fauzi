@@ -46,15 +46,6 @@
                             <input type="number" class="form-control" id="no_telp" name="no_telp" required>
                         </div>
 
-                        <label for="spp">Spp</label>
-                        <div>
-                            <select name="spp" id="spp" class="form-control">
-                                <?php foreach($spps as $spp) : ?>
-                                    <option value="<?= $spp->id_spp ?>"><?= $spp->id_spp ?></option>
-                                <?php endforeach ?>
-                            </select>
-                        </div>
-
                         <div></div>
                         <div>
                             <button class="btn btn-primary w-100">Tambah</button>

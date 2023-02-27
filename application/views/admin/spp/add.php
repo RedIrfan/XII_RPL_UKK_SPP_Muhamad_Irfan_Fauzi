@@ -12,9 +12,9 @@
             <div class="card-body">
                 <form action="<?= site_url('admin/spp/insert') ?>" method="post">
                     <div class="row row-cols-2">
-                        <label for="tahun">Tahun</label>
+                        <label for="bulan">Bulan</label>
                         <div>
-                            <input type="number" class="form-control" id="tahun" name="tahun" required>
+                            <input type="number" class="form-control" id="bulan" name="bulan" required>
                         </div>
 
                         <label for="nominal">Nominal</label>

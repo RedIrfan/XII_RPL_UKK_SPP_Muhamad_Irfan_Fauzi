@@ -31,11 +31,11 @@ class AdminPembayaran extends Admin {
         $siswa = $this->input->post('siswa');
         $tanggal = $this->input->post('tanggal');
         $bulan = $this->input->post('bulan');
-        $tahun = $this->input->post('tahun');
         $spp = $this->siswa->get_where($siswa)[0];
         $jumlah = $this->input->post('jumlah');
 
-        $query = $this->pembayaran->insert($petugas->id_petugas, $siswa, $tanggal, $bulan, $tahun, $spp->id_spp, $jumlah);
+        $this->spp->update($spp->id_spp, $spp->bulan + $bulan, $spp->nominal + $jumlah);
+        $query = $this->pembayaran->insert($petugas->id_petugas, $siswa, $tanggal, $bulan, $spp->id_spp, $jumlah);
 
         if ($query){
             redirect(site_url('admin/history'));

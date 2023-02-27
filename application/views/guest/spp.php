@@ -39,12 +39,14 @@
                         <table class="table table-striped">
                             <thead>
                                 <th>Id</th>
+                                <th>Bulan</th>
                                 <th>Tahun</th>
                                 <th>Nominal</th>
                             </thead>
                             <tbody>
                                 <td><?= $spp->id_spp ?></td>
-                                <td><?= $spp->tahun ?></td>
+                                <td><?= $spp->bulan ?></td>
+                                <td><?= round($spp->bulan / 12) ?></td>
                                 <td><?= $spp->nominal ?></td>
                             </tbody>
                         </table>
@@ -72,10 +74,10 @@
                         <?php foreach($histories as $history) : ?>
                             <tr>
                                 <td><?= $history->id_pembayaran ?></td>
-                                <td><?= $history->nama_petugas ?></td>
+                                <td><?= $history->id_petugas . ' - ' .  $history->nama_petugas ?></td>
                                 <td><?= $history->tgl_bayar ?></td>
                                 <td><?= $history->bulan_dibayar ?></td>
-                                <td><?= $history->tahun_dibayar ?></td>
+                                <td><?= round($history->bulan_dibayar / 12) ?></td>
                                 <td><?= $history->jumlah_bayar ?></td>
                             </tr>
                         <?php endforeach ?>
