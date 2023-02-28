@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.4/css/buttons.dataTables.min.css">
 <div class="container px-4">
     <h1 class="mt-4">History Pembayaran</h1>
     <ol class="breadcrumb mb-4">
@@ -56,3 +57,40 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        var datatable = initializeDatatable();
+        
+        $('#minDate, #maxDate').on('change', function(){
+            datatable.draw();
+        });
+
+        $.fn.DataTable.ext.search.push(function (settings, data, dataIndex){
+            var minDates = $('#minDate').val();
+            var maxDates = $('#maxDate').val();
+            var date = data[3] || 0;
+            
+            if ( minDates == '0' && maxDates == '0' ||
+                minDates == '0' && date <= maxDates ||
+                date >= minDates && maxDates == '0' ||
+                date >= minDates && date <= maxDates
+            ){
+                return true;
+            }
+        
+            return false;
+        
+        });
+    });
+    
+    function datatableStart(){
+        return false
+    }
+
+</script>
+<script src="https://cdn.datatables.net/buttons/2.3.4/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.print.min.js"></script>

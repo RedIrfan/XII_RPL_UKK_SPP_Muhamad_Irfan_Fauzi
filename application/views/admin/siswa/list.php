@@ -30,7 +30,7 @@
                                 <td><?= $student->nama_kelas ?></td>
                                 <td><?= $student->alamat ?></td>
                                 <td><?= $student->no_telp ?></td>
-                                <td><?= $student->id_spp ?></td>
+                                <td><?= $student->bulan . ' - Rp' .  number_format($student->nominal) ?></td>
                                 <td>
                                     <a href="<?= site_url('admin/siswa/edit/' . $student->nisn) ?>" class="btn btn-success" >Edit</a>
                                     <a href="<?= site_url('admin/siswa/delete/' . $student->nisn) ?>" class="btn btn-danger">Delete</a>

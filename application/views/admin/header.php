@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://kit.fontawesome.com/20be270774.css"  crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <div class="navbar bg-navbar navbar-dark text-white fixed-top">
     <div class='container-fluid justify-content-start py-2 d-flex justify-content-between justify-content-md-start'>
         <a class="navbar-brand me-0 ps-3" style="width:230px;" href="<?= site_url('admin') ?>">Irfan SPP</a>    

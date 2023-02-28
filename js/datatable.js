@@ -1,9 +1,18 @@
 $(document).ready(function() {
-    var datatableParams;
-    if (typeof getDatatableParams === "function"){
-        datatableParams = getDatatableParams();
+    var datatable;
+    var datatable_start = true;
+    
+    if (typeof datatableStart === "function"){
+        datatable_start = datatableStart();
+    }   
+    if (datatable_start == true){
+        datatable = initializeDatatable();
     }
-    var datatable = $('#datatable').DataTable({
+});
+
+function initializeDatatable(datatableParams={}){
+    var params = {
+        searching: true,
         responsive: true,
         scrollX : true,
         "language": {
@@ -20,5 +29,12 @@ $(document).ready(function() {
                 "previous" : "Sebelumnya"
             }
         },
-    });
-});
+    };
+    if ( Object.entries(datatableParams).length > 0){
+        $.each(datatableParams , function(i, item) {
+            params[i] = item;
+        });
+    }
+    return $('#datatable').DataTable(params);
+    datatableFunction(datatable);
+}

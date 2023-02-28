@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
 <div class="container-fluid px-4">
     <div class="row row-cols-md-2 row-cols-sm-1 gx-4">
         <div>
@@ -61,7 +63,23 @@
                 <h4 class="text-center mb-4">History Pembayaran</h4>
             </div>
             <div class="card-body">
-                <table id="datatable" class="table table-striped w-100">
+                <div class="d-flex align-items-center mb-2">
+                    <label for="minDate" class="me-2">Dari</label>
+                    <select name="minDate" id="minDate" class="form-select">
+                        <option value="0">yyyy-mm-dd</option>
+                        <?php foreach($histories as $history) : ?>
+                            <option value="<?= $history->tgl_bayar ?>"><?= $history->tgl_bayar ?></option>
+                        <?php endforeach ?>
+                    </select>
+                    <label for="maxDate" class="mx-2">Ke</label>
+                    <select name="maxDate" id="maxDate" class="form-select">
+                        <option value="0">yyyy-mm-dd</option>
+                        <?php foreach($histories as $history) : ?>
+                            <option value="<?= $history->tgl_bayar ?>"><?= $history->tgl_bayar ?></option>
+                        <?php endforeach ?>
+                    </select>
+                </div>
+                <table id="datatable" class="overflow-auto table table-striped w-100">
                     <thead>
                         <th>Id Pembayaran</th>
                         <th>Nama Petugas</th>
@@ -74,11 +92,11 @@
                         <?php foreach($histories as $history) : ?>
                             <tr>
                                 <td><?= $history->id_pembayaran ?></td>
-                                <td><?= $history->id_petugas . ' - ' .  $history->nama_petugas ?></td>
+                                <td><?= $history->nama_petugas ?></td>
                                 <td><?= $history->tgl_bayar ?></td>
                                 <td><?= $history->bulan_dibayar ?></td>
                                 <td><?= round($history->bulan_dibayar / 12) ?></td>
-                                <td><?= $history->jumlah_bayar ?></td>
+                                <td>Rp<?= number_format($history->jumlah_bayar) ?></td>
                             </tr>
                         <?php endforeach ?>
                     </tbody>
@@ -88,7 +106,37 @@
     </div>
 </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+    jQuery(document).ready(function(){
+        var datatable = initializeDatatable();
+        
+        $('#minDate, #maxDate').on('change', function(){
+            datatable.draw();
+        });
+
+        $.fn.DataTable.ext.search.push(function (settings, data, dataIndex){
+            var minDates = $('#minDate').val();
+            var maxDates = $('#maxDate').val();
+            var date = data[2] || 0;
+            
+            if ( minDates == '0' && maxDates == '0' ||
+                minDates == '0' && date <= maxDates ||
+                date >= minDates && maxDates == '0' ||
+                date >= minDates && date <= maxDates
+            ){
+                return true;
+            }
+        
+            return false;
+        
+        });
+    });
+    
+    function datatableStart(){
+        return false
+    }
+
+</script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
 <script src="<?= base_url('js/scripts.js') ?>"></script>
