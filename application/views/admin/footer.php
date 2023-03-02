@@ -15,5 +15,10 @@
 <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
 <script src="<?= base_url('js/scripts.js') ?>"></script>
 <script src="<?= base_url('js/datatable.js') ?>"></script>
+<?php if (isset($scripts)) : ?>
+    <?php foreach ($scripts as $script) : ?>
+        <script src="<?= $script ?>"></script>
+    <?php endforeach ?>
+<?php endif ?>
 </body>
 </html>

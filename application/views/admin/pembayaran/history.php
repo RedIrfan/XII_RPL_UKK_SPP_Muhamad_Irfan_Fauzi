@@ -10,7 +10,7 @@
                 List Pembayaran
             </div>
             <div class="card-body">
-                <a href="<?= site_url('admin/laporan') ?>" class="btn btn-primary w-100 mb-2">Print Laporan</a>
+                <!-- <a href="<?= site_url('admin/laporan') ?>" class="btn btn-primary w-100 mb-2">Print Laporan</a> -->
                 <div class="d-flex align-items-center mb-2">
                     <label for="minDate" class="me-2">Dari</label>
                     <select name="minDate" id="minDate" class="form-select">
@@ -59,7 +59,12 @@
 </div>
 <script>
     $(document).ready(function(){
-        var datatable = initializeDatatable();
+        var datatable = initializeDatatable({
+            dom : 'Bfrtip',
+            buttons : [
+                'pdfHtml5'
+            ]
+        });
         
         $('#minDate, #maxDate').on('change', function(){
             datatable.draw();
@@ -88,9 +93,4 @@
     }
 
 </script>
-<script src="https://cdn.datatables.net/buttons/2.3.4/js/dataTables.buttons.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.print.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.5/css/buttons.dataTables.min.css">
